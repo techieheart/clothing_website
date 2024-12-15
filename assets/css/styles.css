@@ -612,12 +612,131 @@ body.dark-theme {
     height: initial;
     row-gap: 3rem;
   }
+
+  .collection__data-men {
+    margin-top: 0;
+  }
+
+  .collection__data-women {
+    margin-bottom: 0;
+  }
+
+  .products__card {
+    width: 230px;
+  }
+
+  .brand__container {
+    grid-template-columns: repeat(2, 100px);
+    row-gap: 0.5rem;
+  }
 }
 
 /* For medium devices */
+@media screen and (min-width: 576px) {
+  .nav__menu {
+    width: 342px;
+  }
 
+  .footer__content {
+    grid-template-columns: repeat(3, max-content);
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .home__container,
+  .new__container {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+  }
+
+  .home__image {
+    margin-top: 6rem;
+  }
+
+  .brand__container {
+    grid-template-columns: repeat(4, max-content);
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+}
 /* For large devices */
+@media screen and (min-width: 1023px) {
+  .section {
+    padding: 7rem 0 1rem;
+  }
 
+  .section__title {
+    margin-bottom: 4rem;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+
+  .nav__menu {
+    width: initial;
+    margin-left: auto;
+  }
+
+  .nav__list {
+    display: flex;
+    column-gap: 3rem;
+  }
+
+  .nav__link {
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+    transition: 0.3s;
+  }
+
+  .nav__link i {
+    display: none;
+  }
+
+  .nav__link:hover {
+    color: var(--title-color);
+  }
+
+  .active-link {
+    color: var(--title-color);
+    text-decoration: line-through;
+  }
+
+  .change-theme {
+    margin-left: 3rem;
+    color: var(--text-color);
+  }
+
+  .dark-theme .nav__menu {
+    background-color: transparent;
+    box-shadow: initial;
+  }
+
+  .product__container {
+    width: 954px;
+  }
+
+  .new__container {
+    grid-template-columns: repeat(3, max-content);
+  }
+
+  .footer__content {
+    grid-template-columns: repeat(4, max-content);
+    column-gap: 5.5rem;
+  }
+
+  .footer__link {
+    font-size: var(--normal-font-size);
+  }
+
+  .footer__info {
+    padding-bottom: 2rem;
+    row-gap: 1rem;
+  }
+}
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
 
 /* For 4K resolutions (3840 x 2160, 4096 x 2160) */
