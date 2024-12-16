@@ -54,12 +54,19 @@ window.addEventListener("scroll", scrollActive);
 /*=============== SHOW SCROLL UP ===============*/
 const scrollUp = () => {
   const scrollUp = document.getElementById("scroll-up");
-  // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
-  this.scrollY >= 350
+  window.scrollY >= 350
     ? scrollUp.classList.add("show-scroll")
     : scrollUp.classList.remove("show-scroll");
 };
 window.addEventListener("scroll", scrollUp);
+
+document.getElementById("scroll-up").addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent the default anchor link behavior
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Smooth scrolling
+  });
+});
 
 /*=============== DARK LIGHT THEME ===============*/
 const themeButton = document.getElementById("theme-button");
@@ -96,4 +103,20 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "60px",
+  duration: 2500,
+  delay: 100,
+  reset: true,
+});
+
+sr.reveal(
+  ".home__data, .products__container, .footer__container, .footer__info "
+);
+sr.reveal(".home__image", { delay: 600, origin: "bottom" });
+sr.reveal(".new__card, .brand__img", { interval: 100 });
+sr.reveal(".collection__explore:nth-child(1)", { origin: "right" });
+sr.reveal(".collection__explore:nth-child(2)", { origin: "left" });
